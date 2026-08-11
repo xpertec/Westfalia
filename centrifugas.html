@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="icon" href="Logo.jpeg" type="image/jpeg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Separadoras Centrífugas – Westfalia Separator Perú</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --green: #007A73;
+      --green-light: #009b93;
+      --green-dark: #005c57;
+      --blue: #0b3d91;
+      --blue-light: #1a5fc8;
+      --blue-dark: #072a6b;
+      --accent: #007A73;
+      --white: #ffffff;
+      --off-white: #f4f6f8;
+      --gray: #8a9ab0;
+      --dark: #0a0f1e;
+      --text: #1c2a3a;
+      --dark-barra: #002B45;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body { font-family: 'Barlow', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden }
+
+    ::-webkit-scrollbar { width: 5px }
+    ::-webkit-scrollbar-track { background: #f1f1f1 }
+    ::-webkit-scrollbar-thumb { background: var(--green); border-radius: 10px }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      padding: 0 4vw; display: flex; align-items: center;
+      justify-content: space-between; height: 72px;
+      background: #ffffff;
+      border-bottom: 1px solid rgba(0, 80, 60, 0.15);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      transition: all .3s ease;
+    }
+    nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,.15) }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none }
+    .nav-logo img { height: 42px; width: auto; filter: brightness(1.1) }
+    .nav-brand { display: flex; flex-direction: column; line-height: 1 }
+    .nav-brand-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; font-weight: 700; color: #006a4e; letter-spacing: 1px }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center }
+    .nav-links a { color: #006a4e; text-decoration: none; font-size: .85rem; font-weight: 600; letter-spacing: .5px; text-transform: uppercase; transition: color .3s; position: relative }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--green); transition: width .3s }
+    .nav-links a:hover { color: #004a38 }
+    .nav-links a:hover::after { width: 100% }
+    .nav-cta { background: var(--accent); color: #fff !important; padding: .5rem 1.4rem; border-radius: 4px; font-weight: 700 !important; transition: all .3s !important }
+    .nav-cta:hover { background: var(--green-light); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,122,115,.4) }
+    .nav-cta::after { display: none !important }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #006a4e; transition: all .3s }
+
+    /* ===== PAGE HERO ===== */
+    .page-hero {
+      margin-top: 72px;
+      background: linear-gradient(110deg, var(--dark) 0%, #0d2a4a 60%, #0f3d35 100%);
+      padding: 5rem 8vw 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, rgba(0,122,115,.18) 0%, transparent 60%);
+    }
+    .page-hero-inner { position: relative; z-index: 2; max-width: 760px }
+    .breadcrumb { display: flex; align-items: center; gap: .5rem; margin-bottom: 1.5rem; font-size: .8rem; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: 1.5px }
+    .breadcrumb a { color: var(--accent); text-decoration: none }
+    .breadcrumb a:hover { color: var(--green-light) }
+    .breadcrumb i { font-size: .65rem }
+    .page-eyebrow {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: rgba(0,122,115,.14); border: 1px solid rgba(0,122,115,.4);
+      color: var(--accent); padding: .35rem 1rem; border-radius: 4px;
+      font-size: .78rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: 1.2rem; width: fit-content;
+    }
+    .page-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: 800; color: #fff; line-height: 1.05;
+      letter-spacing: -1px; margin-bottom: 1rem;
+    }
+    .page-title span { background: linear-gradient(90deg, var(--accent), #4af0a8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text }
+    .page-desc { color: rgba(255,255,255,.65); font-size: 1.05rem; font-weight: 300; line-height: 1.75; max-width: 600px; margin-bottom: 2rem }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: .8rem }
+    .hero-badge {
+      display: flex; align-items: center; gap: .5rem;
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+      color: rgba(255,255,255,.75); padding: .4rem 1rem; border-radius: 4px;
+      font-size: .8rem; font-weight: 600; letter-spacing: .5px;
+    }
+    .hero-badge i { color: var(--accent) }
+
+    /* ===== SECTION COMMONS ===== */
+    .section-tag {
+      display: inline-block; font-size: .72rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase; color: var(--green);
+      border: 1px solid rgba(0,122,115,.3); background: rgba(0,122,115,.08);
+      padding: .3rem .9rem; border-radius: 4px; margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 800;
+      color: var(--dark); line-height: 1.1; margin-bottom: 1rem;
+    }
+    .section-sub { color: var(--gray); font-size: 1rem; line-height: 1.75; max-width: 560px }
+    .divider { width: 48px; height: 3px; background: linear-gradient(90deg, var(--green), var(--blue)); border-radius: 2px; margin-bottom: 1.5rem }
+
+    /* ===== INTRO SECTION ===== */
+    .intro-section { padding: 5rem 8vw; background: var(--white) }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center }
+    .intro-img-wrap { position: relative }
+    .intro-img {
+      width: 100%; border-radius: 8px; overflow: hidden; aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--green-dark), var(--blue-dark));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 6rem; color: rgba(255,255,255,.08);
+      box-shadow: 0 30px 70px rgba(0,0,0,.14);
+    }
+    .intro-img img { width: 100%; height: 100%; object-fit: cover; display: block }
+    .intro-badge {
+      position: absolute; bottom: -22px; right: -22px;
+      background: var(--accent); color: #fff;
+      padding: 1.2rem 1.6rem; border-radius: 6px;
+      box-shadow: 0 14px 36px rgba(0,122,115,.35);
+      text-align: center;
+    }
+    .intro-badge .big { font-family: 'Barlow Condensed', sans-serif; font-size: 2.2rem; font-weight: 800; line-height: 1 }
+    .intro-badge .small { font-size: .68rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-top: .2rem }
+    .features-list { margin-top: 1.8rem; display: flex; flex-direction: column; gap: .85rem }
+    .feature-item { display: flex; align-items: flex-start; gap: .9rem; padding: .9rem 1rem; border-radius: 6px; background: var(--off-white); border: 1px solid rgba(0,0,0,.05); transition: all .3s }
+    .feature-item:hover { background: #e8f5f4; border-color: rgba(0,122,115,.2) }
+    .feature-item i { color: var(--green); font-size: 1.1rem; margin-top: .1rem; width: 20px; flex-shrink: 0 }
+    .feature-item div strong { display: block; font-size: .9rem; font-weight: 700; color: var(--dark); margin-bottom: .2rem }
+    .feature-item div span { font-size: .83rem; color: var(--gray); line-height: 1.5 }
+
+    /* ===== EQUIPMENT GRID ===== */
+    .equip-section { padding: 5rem 8vw; background: var(--off-white) }
+    .equip-header { text-align: center; margin-bottom: 3.5rem }
+    .equip-header .section-sub { margin: 0 auto }
+    .equip-header .divider { margin: 0 auto 1.5rem }
+    .equip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+    }
+    .equip-card {
+      background: #fff; border-radius: 8px;
+      overflow: hidden; transition: all .35s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+      display: flex; flex-direction: column;
+    }
+    .equip-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,.12) }
+    .equip-card-img {
+      height: 200px; overflow: hidden; position: relative;
+      background: linear-gradient(135deg, var(--dark), #0d2a4a);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .equip-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease }
+    .equip-card:hover .equip-card-img img { transform: scale(1.05) }
+    .equip-card-img .equip-icon-fallback { font-size: 4.5rem; color: rgba(255,255,255,.12) }
+    .equip-model-badge {
+      position: absolute; top: 1rem; left: 1rem;
+      background: var(--accent); color: #fff;
+      font-size: .68rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: .28rem .75rem; border-radius: 3px;
+    }
+    .equip-card-body { padding: 1.6rem; flex: 1; display: flex; flex-direction: column }
+    .equip-card-name {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 1.35rem;
+      font-weight: 700; color: var(--dark); margin-bottom: .5rem;
+    }
+    .equip-card-desc { font-size: .85rem; color: var(--gray); line-height: 1.65; flex: 1; margin-bottom: 1.2rem }
+    .equip-specs { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.4rem }
+    .equip-spec-tag {
+      font-size: .7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      background: var(--off-white); border: 1px solid rgba(0,0,0,.1);
+      color: var(--gray); padding: .22rem .65rem; border-radius: 3px;
+    }
+    .equip-card-action {
+      display: inline-flex; align-items: center; gap: .5rem;
+      color: var(--green); font-size: .85rem; font-weight: 700;
+      text-decoration: none; letter-spacing: .5px; border-top: 1px solid rgba(0,0,0,.06);
+      padding-top: 1rem; transition: gap .3s;
+    }
+    .equip-card-action:hover { gap: .9rem; color: var(--green-dark) }
+
+    /* ===== APPLICATIONS SECTION ===== */
+    .apps-section { padding: 5rem 8vw; background: var(--dark) }
+    .apps-header { margin-bottom: 3rem }
+    .apps-header .section-tag { color: var(--accent); border-color: rgba(0,122,115,.4); background: rgba(0,122,115,.1) }
+    .apps-header .section-title { color: #fff }
+    .apps-header .section-sub { color: rgba(255,255,255,.5) }
+    .apps-header .divider { background: linear-gradient(90deg, var(--accent), var(--blue-light)) }
+    .apps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem }
+    .app-card {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 8px; padding: 1.6rem 1.4rem; transition: all .3s; text-align: center;
+    }
+    .app-card:hover { background: rgba(0,122,115,.15); border-color: rgba(0,122,115,.4); transform: translateY(-4px) }
+    .app-card i { font-size: 2.2rem; color: var(--accent); margin-bottom: 1rem; display: block }
+    .app-card h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: .4rem; letter-spacing: .5px }
+    .app-card p { font-size: .8rem; color: rgba(255,255,255,.4); line-height: 1.55 }
+
+    /* ===== TECH SPECS SECTION ===== */
+    .specs-section { padding: 5rem 8vw; background: var(--white) }
+    .specs-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start }
+    .specs-table-wrap { overflow-x: auto }
+    .specs-table { width: 100%; border-collapse: collapse; font-size: .88rem }
+    .specs-table th { text-align: left; padding: .75rem 1rem; background: var(--green); color: #fff; font-weight: 700; font-size: .78rem; letter-spacing: 1px; text-transform: uppercase }
+    .specs-table th:first-child { border-radius: 4px 0 0 0 }
+    .specs-table th:last-child { border-radius: 0 4px 0 0 }
+    .specs-table td { padding: .75rem 1rem; border-bottom: 1px solid rgba(0,0,0,.06); color: var(--text); vertical-align: top }
+    .specs-table tr:last-child td { border-bottom: none }
+    .specs-table tr:nth-child(even) td { background: var(--off-white) }
+    .specs-table td:first-child { font-weight: 600; color: var(--dark); width: 42% }
+    .advantages-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem }
+    .adv-item { display: flex; gap: 1rem; align-items: flex-start }
+    .adv-num {
+      width: 36px; height: 36px; border-radius: 50%; background: var(--accent);
+      color: #fff; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1rem;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .adv-item div strong { display: block; font-size: .9rem; font-weight: 700; color: var(--dark); margin-bottom: .2rem }
+    .adv-item div p { font-size: .83rem; color: var(--gray); line-height: 1.55 }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      padding: 5rem 8vw; text-align: center;
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--blue-dark) 100%);
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(0,200,180,.18) 0%, transparent 60%);
+    }
+    .cta-section > * { position: relative; z-index: 1 }
+    .cta-section .section-tag { color: rgba(255,255,255,.7); border-color: rgba(255,255,255,.2); background: rgba(255,255,255,.07) }
+    .cta-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: 1rem }
+    .cta-desc { color: rgba(255,255,255,.6); font-size: 1rem; line-height: 1.7; max-width: 520px; margin: 0 auto 2.5rem }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap }
+    .btn-cta-primary {
+      background: #fff; color: var(--green-dark); padding: .9rem 2.2rem; border-radius: 4px;
+      font-weight: 700; font-size: .95rem; text-decoration: none; letter-spacing: .5px;
+      transition: all .3s; display: inline-flex; align-items: center; gap: .6rem;
+    }
+    .btn-cta-primary:hover { background: var(--off-white); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,.2) }
+    .btn-cta-secondary {
+      border: 2px solid rgba(255,255,255,.35); color: #fff; padding: .9rem 2.2rem; border-radius: 4px;
+      font-weight: 700; font-size: .95rem; text-decoration: none; letter-spacing: .5px;
+      transition: all .3s; display: inline-flex; align-items: center; gap: .6rem;
+    }
+    .btn-cta-secondary:hover { border-color: rgba(255,255,255,.7); background: rgba(255,255,255,.08); transform: translateY(-2px) }
+
+    /* ===== FOOTER ===== */
+    footer { background: var(--dark) }
+    .footer-main {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem; padding: 4rem 8vw 3rem;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-brand img { height: 38px; margin-bottom: 1rem; filter: brightness(1.2) }
+    .footer-brand p { font-size: .82rem; color: rgba(255,255,255,.4); line-height: 1.7 }
+    .social-links { display: flex; gap: .7rem; margin-top: 1.2rem }
+    .social-link {
+      width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255,255,255,.12);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.45); font-size: .8rem; text-decoration: none; transition: all .3s;
+    }
+    .social-link:hover { background: var(--accent); border-color: var(--accent); color: #fff }
+    .footer-col h5 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; color: #fff; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1.2rem }
+    .footer-col ul { list-style: none }
+    .footer-col ul li { margin-bottom: .6rem }
+    .footer-col ul li a { font-size: .83rem; color: rgba(255,255,255,.4); text-decoration: none; transition: color .3s }
+    .footer-col ul li a:hover { color: var(--accent) }
+    .footer-bottom { padding: 1.5rem 8vw; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem }
+    .footer-bottom p { font-size: .78rem; color: rgba(255,255,255,.25) }
+    .footer-bottom a { color: var(--accent); text-decoration: none; font-size: .78rem }
+
+    /* ===== WHATSAPP FLOAT ===== */
+    .wa-float {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+      background: #25d366; width: 56px; height: 56px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 1.5rem; text-decoration: none;
+      box-shadow: 0 8px 24px rgba(37,211,102,.45); transition: transform .3s, box-shadow .3s;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 12px 32px rgba(37,211,102,.55) }
+
+    /* ===== REVEAL ===== */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease }
+    .reveal.visible { opacity: 1; transform: none }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:1024px) {
+      .equip-grid { grid-template-columns: repeat(2, 1fr) }
+      .apps-grid { grid-template-columns: repeat(2, 1fr) }
+      .specs-layout { grid-template-columns: 1fr }
+      .intro-grid { grid-template-columns: 1fr; gap: 3rem }
+      .intro-badge { display: none }
+    }
+    @media(max-width:680px) {
+      nav .nav-links { display: none; flex-direction: column; position: fixed; top: 72px; left: 0; right: 0; background: rgba(10,15,30,.98); padding: 2rem 8vw; gap: 1.5rem }
+      nav .nav-links.open { display: flex }
+      .hamburger { display: flex }
+      .equip-grid { grid-template-columns: 1fr }
+      .apps-grid { grid-template-columns: repeat(2, 1fr) }
+      .footer-main { grid-template-columns: 1fr; gap: 2rem }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="Westfalia_5.html" class="nav-logo">
+      <img src="./Logo.jpeg" alt="Westfalia Perú Logo">
+      <div class="nav-brand">
+        <span class="nav-brand-name">Representaciones Westfalia Separator</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="Westfalia_5.html#productos">Equipos</a></li>
+      <li><a href="Westfalia_5.html#servicios">Servicios</a></li>
+      <li><a href="Westfalia_5.html#nosotros">Nosotros</a></li>
+      <li><a href="Westfalia_5.html#historia">Historia</a></li>
+      <li><a href="https://wa.me/51998376333" class="nav-cta" target="_blank"><i class="fab fa-whatsapp"></i> Contactar</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="Westfalia_5.html">Inicio</a>
+        <i class="fas fa-chevron-right"></i>
+        <a href="Westfalia_5.html#productos">Productos</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Separadoras Centrífugas</span>
+      </div>
+      <div class="page-eyebrow"><i class="fas fa-sync-alt"></i> Línea de Separadoras</div>
+      <h1 class="page-title">Separadoras<br><span>Centrífugas GEA</span></h1>
+      <p class="page-desc">Tecnología de separación de alto rendimiento para líquidos y sólidos en procesos industriales continuos. Diseñadas y fabricadas bajo los más rigurosos estándares de ingeniería alemana desde 1929.</p>
+      <div class="hero-badges">
+        <div class="hero-badge"><i class="fas fa-bolt"></i> Alta Eficiencia Energética</div>
+        <div class="hero-badge"><i class="fas fa-shield-alt"></i> Diseño GEA Certificado</div>
+        <div class="hero-badge"><i class="fas fa-tools"></i> Servicio Técnico Local</div>
+        <div class="hero-badge"><i class="fas fa-recycle"></i> Proceso Continuo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro-section">
+    <div class="intro-grid">
+      <div class="intro-img-wrap reveal">
+        <div class="intro-img">
+          <img src="./centrifuga_main.jpg" alt="Separadora Centrífuga GEA Westfalia"
+            onerror="this.style.display='none';this.parentElement.querySelector('.equip-icon-fallback') && (this.parentElement.querySelector('.equip-icon-fallback').style.display='flex')">
+          <i class="fas fa-sync-alt equip-icon-fallback"></i>
+        </div>
+        <div class="intro-badge">
+          <div class="big">95+</div>
+          <div class="small">Años de<br>Tecnología</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="section-tag">¿Qué es una Separadora?</span>
+        <h2 class="section-title">Separación centrífuga<br>de precisión industrial</h2>
+        <div class="divider"></div>
+        <p class="section-sub">Las separadoras centrífugas GEA Westfalia utilizan la fuerza centrífuga para separar líquidos de distintas densidades y eliminar sólidos de manera continua y eficiente, sin interrupciones en el proceso productivo.</p>
+        <div class="features-list">
+          <div class="feature-item">
+            <i class="fas fa-tachometer-alt"></i>
+            <div>
+              <strong>Operación Continua Automática</strong>
+              <span>Funcionamiento ininterrumpido con sistema de auto-limpieza programable, minimizando paradas no planificadas y maximizando la productividad.</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-layer-group"></i>
+            <div>
+              <strong>Separación en Dos y Tres Fases</strong>
+              <span>Capacidad de separar simultáneamente dos líquidos inmiscibles y sólidos (3 fases), o un líquido con clarificación de sólidos (2 fases).</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-cog"></i>
+            <div>
+              <strong>Repuestos 100% Originales GEA</strong>
+              <span>Contamos con stock permanente de repuestos originales certificados para garantizar la vida útil y el desempeño óptimo del equipo.</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-chart-line"></i>
+            <div>
+              <strong>Alta Capacidad de Proceso</strong>
+              <span>Disponibles desde modelos compactos hasta unidades industriales de gran volumen, adaptables a cada escala de producción.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPMENT GRID -->
+  <section class="equip-section">
+    <div class="equip-header reveal">
+      <span class="section-tag">Modelos Disponibles</span>
+      <h2 class="section-title">Nuestro Portafolio de<br>Separadoras Centrífugas</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Línea completa de separadoras GEA Westfalia para distintas industrias y capacidades de proceso. Consulte disponibilidad y especificaciones con nuestros asesores.</p>
+    </div>
+    <div class="equip-grid">
+
+      <!-- Modelo 1 -->
+      <div class="equip-card reveal">
+        <div class="equip-card-img">
+          <img src="./sep_osa.jpg" alt="Separadora OSA"
+            onerror="this.style.display='none'">
+          <i class="fas fa-sync-alt equip-icon-fallback"></i>
+          <span class="equip-model-badge">Serie OSA</span>
+        </div>
+        <div class="equip-card-body">
+          <div class="equip-card-name">Separadora OSA – Aceite y Solubles</div>
+          <p class="equip-card-desc">Separadora de tres fases diseñada para la industria pesquera. Separa con alta eficiencia el aceite de pescado, agua de cola y sólidos en un proceso continuo, maximizando el rendimiento de extracción.</p>
+          <div class="equip-specs">
+            <span class="equip-spec-tag">3 Fases</span>
+            <span class="equip-spec-tag">Industria Pesquera</span>
+            <span class="equip-spec-tag">Proceso Continuo</span>
+            <span class="equip-spec-tag">Auto-limpieza</span>
+          </div>
+          <a href="https://wa.me/51998376333?text=Hola,%20necesito%20información%20sobre%20la%20Separadora%20OSA" target="_blank" class="equip-card-action">
+            Solicitar información <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Modelo 2 -->
+      <div class="equip-card reveal">
+        <div class="equip-card-img">
+          <img src="./sep_rsa.jpg" alt="Separadora RSA"
+            onerror="this.style.display='none'">
+          <i class="fas fa-sync-alt equip-icon-fallback"></i>
+          <span class="equip-model-badge">Serie RSA</span>
+        </div>
+        <div class="equip-card-body">
+          <div class="equip-card-name">Separadora RSA – Refinación de Aceites</div>
+          <p class="equip-card-desc">Separadora centrífuga de dos fases para refinación y clarificación de aceites vegetales y comestibles. Alta eficiencia en la eliminación de impurezas y agua residual del producto final.</p>
+          <div class="equip-specs">
+            <span class="equip-spec-tag">2 Fases</span>
+            <span class="equip-spec-tag">Aceites Vegetales</span>
+            <span class="equip-spec-tag">Alta Pureza</span>
+            <span class="equip-spec-tag">CIP Integrado</span>
+          </div>
+          <a href="https://wa.me/51998376333?text=Hola,%20necesito%20información%20sobre%20la%20Separadora%20RSA" target="_blank" class="equip-card-action">
+            Solicitar información <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Modelo 3 -->
+      <div class="equip-card reveal">
+        <div class="equip-card-img">
+          <img src="./sep_msa.jpg" alt="Separadora MSA"
+            onerror="this.style.display='none'">
+          <i class="fas fa-sync-alt equip-icon-fallback"></i>
+          <span class="equip-model-badge">Serie MSA</span>
+        </div>
+        <div class="equip-card-body">
+          <div class="equip-card-name">Separadora MSA – Marina y Combustibles</div>
+          <p class="equip-card-desc">Separadora diseñada para uso marino y purificación de combustibles y aceites lubricantes en embarcaciones e instalaciones industriales. Cumple normativas MARPOL.</p>
+          <div class="equip-specs">
+            <span class="equip-spec-tag">Uso Marino</span>
+            <span class="equip-spec-tag">Combustibles</span>
+            <span class="equip-spec-tag">MARPOL</span>
+            <span class="equip-spec-tag">Compacta</span>
+          </div>
+          <a href="https://wa.me/51998376333?text=Hola,%20necesito%20información%20sobre%20la%20Separadora%20MSA" target="_blank" class="equip-card-action">
+            Solicitar información <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Modelo 4 -->
+      <div class="equip-card reveal">
+        <div class="equip-card-img">
+          <img src="./sep_csa.jpg" alt="Separadora CSA"
+            onerror="this.style.display='none'">
+          <i class="fas fa-sync-alt equip-icon-fallback"></i>
+          <span class="equip-model-badge">Serie CSA</span>
+        </div>
+        <div class="equip-card-body">
+          <div class="equip-card-name">Separadora CSA – Clarificación Química</div>
+          <p class="equip-card-desc">Separadora centrífuga para procesos químicos y farmacéuticos. Clarificación y purificación de líquidos con alto contenido de sólidos finos, con materiales especiales resistentes a la corrosión.</p>
+          <div class="equip-specs">
+            <span class="equip-spec-tag">Industria Química</span>
+            <span class="equip-spec-tag">Acero Inox 316</span>
+            <span class="equip-spec-tag">Alta Claridad</span>
+            <span class="equip-spec-tag">Anticorrosivo</span>
+          </div>
+          <a href="https://wa.me/51998376333?text=Hola,%20necesito%20información%20sobre%20la%20Separadora%20CSA" target="_blank" class="equip-card-action">
+            Solicitar información <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Modelo 5 -->
+      <div class="equip-card reveal">
+        <div class="equip-card-img">
+          <img src="./sep_ssa.jpg" alt="Separadora SSA"
+            onerror="this.style.display='none'">
+          <i class="fas fa-sync-alt equip-icon-fallback"></i>
+          <span class="equip-model-badge">Serie SSA</span>
+        </div>
+        <div class="equip-card-body">
+          <div class="equip-card-name">Separadora SSA – Jugos y Bebidas</div>
+          <p class="equip-card-desc">Diseñada para la industria de alimentos y bebidas, permite la clarificación de jugos de frutas, vinos, cervezas y otros líquidos alimenticios con estrictas condiciones de higiene.</p>
+          <div class="equip-specs">
+            <span class="equip-spec-tag">Alimentos</span>
+            <span class="equip-spec-tag">FDA Compatible</span>
+            <span class="equip-spec-tag">CIP/SIP</span>
+            <span class="equip-spec-tag">EHEDG</span>
+          </div>
+          <a href="https://wa.me/51998376333?text=Hola,%20necesito%20información%20sobre%20la%20Separadora%20SSA" target="_blank" class="equip-card-action">
+            Solicitar información <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Modelo 6 -->
+      <div class="equip-card reveal">
+        <div class="equip-card-img">
+          <img src="./sep_dsa.jpg" alt="Separadora DSA"
+            onerror="this.style.display='none'">
+          <i class="fas fa-sync-alt equip-icon-fallback"></i>
+          <span class="equip-model-badge">Serie DSA</span>
+        </div>
+        <div class="equip-card-body">
+          <div class="equip-card-name">Separadora DSA – Lácteos y Crema</div>
+          <p class="equip-card-desc">Separadora centrifuga de alta velocidad para la industria láctea. Descremado de leche, estandarización de grasa y producción de crema con máxima eficiencia y control de calidad.</p>
+          <div class="equip-specs">
+            <span class="equip-spec-tag">Industria Láctea</span>
+            <span class="equip-spec-tag">Descremado</span>
+            <span class="equip-spec-tag">Alta Velocidad</span>
+            <span class="equip-spec-tag">GMP</span>
+          </div>
+          <a href="https://wa.me/51998376333?text=Hola,%20necesito%20información%20sobre%20la%20Separadora%20DSA" target="_blank" class="equip-card-action">
+            Solicitar información <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="apps-section">
+    <div class="apps-header reveal">
+      <span class="section-tag">Aplicaciones Industriales</span>
+      <h2 class="section-title">Industrias que confían en<br>nuestra tecnología</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Nuestras separadoras están presentes en los sectores industriales más exigentes del Perú y Latinoamérica.</p>
+    </div>
+    <div class="apps-grid">
+      <div class="app-card reveal">
+        <i class="fas fa-fish"></i>
+        <h4>Industria Pesquera</h4>
+        <p>Separación de aceite de pescado, agua de cola y concentración de solubles en plantas de harina y aceite de pescado.</p>
+      </div>
+      <div class="app-card reveal">
+        <i class="fas fa-ship"></i>
+        <h4>Industria Marítima</h4>
+        <p>Purificación de combustibles HFO y MGO, y tratamiento de aceites lubricantes en embarcaciones y plataformas.</p>
+      </div>
+      <div class="app-card reveal">
+        <i class="fas fa-industry"></i>
+        <h4>Industria Azucarera</h4>
+        <p>Clarificación de jugos de caña y purificación de melaza en los procesos de producción de azúcar refinada.</p>
+      </div>
+      <div class="app-card reveal">
+        <i class="fas fa-flask"></i>
+        <h4>Industria Química</h4>
+        <p>Separación y clarificación en procesos de producción química, petroquímica y tratamiento de efluentes industriales.</p>
+      </div>
+      <div class="app-card reveal">
+        <i class="fas fa-utensils"></i>
+        <h4>Alimentos y Bebidas</h4>
+        <p>Clarificación de jugos, vinos, cervezas y aceites vegetales con estrictos controles de higiene y calidad alimentaria.</p>
+      </div>
+      <div class="app-card reveal">
+        <i class="fas fa-cow"></i>
+        <h4>Industria Láctea</h4>
+        <p>Descremado de leche, producción de crema, clarificación y estandarización de grasa en plantas de procesamiento.</p>
+      </div>
+      <div class="app-card reveal">
+        <i class="fas fa-mountain"></i>
+        <h4>Industria Minera</h4>
+        <p>Clarificación de lixiviados, separación de sólidos en suspensión y tratamiento de aguas de proceso minero.</p>
+      </div>
+      <div class="app-card reveal">
+        <i class="fas fa-bolt"></i>
+        <h4>Plantas de Energía</h4>
+        <p>Tratamiento y purificación de aceites dieléctricos, lubricantes turbinas y combustibles para generación eléctrica.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH SPECS -->
+  <section class="specs-section">
+    <div class="specs-layout">
+      <div class="reveal">
+        <span class="section-tag">Especificaciones Técnicas</span>
+        <h2 class="section-title">Parámetros de<br>Operación</h2>
+        <div class="divider"></div>
+        <div class="specs-table-wrap">
+          <table class="specs-table">
+            <thead>
+              <tr><th>Parámetro</th><th>Rango / Valor</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Capacidad de caudal</td><td>500 – 100,000 L/h (según modelo)</td></tr>
+              <tr><td>Velocidad de rotación</td><td>4,000 – 10,000 RPM</td></tr>
+              <tr><td>Factor de separación (G)</td><td>hasta 10,000 × g</td></tr>
+              <tr><td>Temperatura de operación</td><td>hasta 130 °C</td></tr>
+              <tr><td>Presión de operación</td><td>hasta 6 bar</td></tr>
+              <tr><td>Material del bowl</td><td>Acero Inoxidable 316 / Dúplex</td></tr>
+              <tr><td>Sistema de limpieza</td><td>CIP / SIP integrado (opcional)</td></tr>
+              <tr><td>Control</td><td>Panel PLC Siemens / GEA Unitrol</td></tr>
+              <tr><td>Certificaciones</td><td>ATEX, FDA, CE, ISO 9001</td></tr>
+              <tr><td>Consumo energético</td><td>2.2 – 75 kW (según modelo)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="section-tag">¿Por qué GEA Westfalia?</span>
+        <h2 class="section-title">Ventajas competitivas<br>de nuestra tecnología</h2>
+        <div class="divider"></div>
+        <div class="advantages-list">
+          <div class="adv-item">
+            <div class="adv-num">1</div>
+            <div>
+              <strong>Tecnología alemana de vanguardia</strong>
+              <p>Más de 95 años de innovación continua en procesos de separación centrífuga, con miles de unidades instaladas a nivel mundial.</p>
+            </div>
+          </div>
+          <div class="adv-item">
+            <div class="adv-num">2</div>
+            <div>
+              <strong>Menor costo de operación</strong>
+              <p>Diseño optimizado para consumo energético reducido, con sistemas de recuperación de energía en los modelos de alta capacidad.</p>
+            </div>
+          </div>
+          <div class="adv-item">
+            <div class="adv-num">3</div>
+            <div>
+              <strong>Soporte técnico local en Perú</strong>
+              <p>Equipo de ingenieros especializados y taller propio en Lima para mantenimiento, reparación y puesta en marcha en todo el país.</p>
+            </div>
+          </div>
+          <div class="adv-item">
+            <div class="adv-num">4</div>
+            <div>
+              <strong>Stock permanente de repuestos</strong>
+              <p>Almacén local con repuestos originales GEA certificados, garantizando tiempos de respuesta mínimos ante cualquier eventualidad.</p>
+            </div>
+          </div>
+          <div class="adv-item">
+            <div class="adv-num">5</div>
+            <div>
+              <strong>Adaptabilidad total al proceso</strong>
+              <p>Cada equipo puede ser configurado y ajustado específicamente para las condiciones de su proceso industrial, garantizando la máxima eficiencia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <span class="section-tag">Cotice Ahora</span>
+    <h2 class="cta-title">¿Listo para optimizar<br>su proceso industrial?</h2>
+    <p class="cta-desc">Nuestros especialistas analizarán sus requerimientos y le recomendarán la separadora más adecuada para su operación. Respuesta en menos de 24 horas.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/51998376333?text=Hola,%20me%20interesa%20cotizar%20una%20Separadora%20Centrífuga%20GEA%20Westfalia" target="_blank" class="btn-cta-primary">
+        <i class="fab fa-whatsapp"></i> Cotizar por WhatsApp
+      </a>
+      <a href="mailto:info@westfalia.pe?subject=Cotización Separadora Centrífuga" class="btn-cta-secondary">
+        <i class="fas fa-envelope"></i> Enviar Email
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="./Logo.jpeg" alt="Representaciones Westfalia Separator">
+        <p>Representantes oficiales de tecnología GEA Westfalia Separator en Perú y Sudamérica. Soluciones industriales de alta eficiencia desde 1999.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/REPWestfaliaPeru" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/51998376333" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="Westfalia_5.html#nosotros">Quiénes Somos</a></li>
+          <li><a href="Westfalia_5.html#historia">Historia</a></li>
+          <li><a href="Westfalia_5.html#servicios">Servicios</a></li>
+          <li><a href="Westfalia_5.html#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Productos</h5>
+        <ul>
+          <li><a href="centrifugas.html">Separadoras Centrífugas</a></li>
+          <li><a href="Westfalia_5.html#productos">Decantadoras</a></li>
+          <li><a href="Westfalia_5.html#productos">Pulidoras</a></li>
+          <li><a href="Westfalia_5.html#productos">Intercambiadores</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="tel:+5114468971">(01) 446-8971</a></li>
+          <li><a href="https://wa.me/51998376333">998 376 333</a></li>
+          <li><a href="mailto:info@westfalia.pe">info@westfalia.pe</a></li>
+          <li><a href="https://maps.app.goo.gl/95iVneytemXYbtku7" target="_blank">Magdalena, Lima</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Representaciones Westfalia Separator S.A.C · RUC: 20430480074</p>
+      <a href="Westfalia_5.html">Volver al inicio →</a>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/51998376333" class="wa-float" target="_blank" title="Chatear por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // Nav scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+
+    // Hamburger
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // Reveal on scroll
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
