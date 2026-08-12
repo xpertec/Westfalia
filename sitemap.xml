@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://westfalia.pe/</loc>
+    <loc>https://gea-westfalia.com.pe/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://westfalia.pe/centrifugas.html</loc>
+    <loc>https://gea-westfalia.com.pe/centrifugas.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://westfalia.pe/decantadoras.html</loc>
+    <loc>https://gea-westfalia.com.pe/decantadoras.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://westfalia.pe/pulidoras.html</loc>
+    <loc>https://gea-westfalia.com.pe/pulidoras.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://westfalia.pe/intercambiadores.html</loc>
+    <loc>https://gea-westfalia.com.pe/intercambiadores.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://westfalia.pe/servicios.html</loc>
+    <loc>https://gea-westfalia.com.pe/servicios.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
