@@ -3,7 +3,7 @@
 
 <head>
     <!-- Favicons -->
-    <link rel="icon" href="Logo.jpeg" type="image/jpeg">
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -21,6 +21,7 @@
         content="Westfalia Separator, GEA Westfalia, centrifugas industriales, decantadoras, pulidoras, intercambiadores de calor, repuestos originales GEA, soporte tecnico industrial peru, separadoras centrifugas, Magdalena, Puente Piedra, Lima, Peru">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://westfalia.pe/">
+    <link rel="sitemap" type="application/xml" href="https://westfalia.pe/sitemap.xml">
 
     <!-- GEO Targeting / Local SEO -->
     <meta name="geo.region" content="PE-LMA" />
@@ -34,7 +35,7 @@
         content="Socio estratégico del Grupo GEA en soluciones de separación y procesos industriales en Perú y Sudamérica. Centrífugas, decantadoras, repuestos originales y servicio especializado." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://westfalia.pe/" />
-    <meta property="og:image" content="https://westfalia.pe/Logo.jpeg" />
+    <meta property="og:image" content="https://westfalia.pe/logo.jpg" />
     <meta property="og:site_name" content="Westfalia Perú" />
     <meta property="og:locale" content="es_PE" />
 
@@ -43,7 +44,7 @@
     <meta name="twitter:title" content="Representaciones Westfalia Separator S.A.C. | Tecnología GEA en Perú" />
     <meta name="twitter:description"
         content="Equipos de alta tecnología para la industria: centrífugas, decantadores y soporte técnico especializado de GEA Westfalia Separator en Perú." />
-    <meta name="twitter:image" content="https://westfalia.pe/Logo.jpeg" />
+    <meta name="twitter:image" content="https://westfalia.pe/logo.jpg" />
 
     <!-- Marcado de Datos Estructurados JSON-LD (Schema.org) para Google (SEO y GEO Avanzado) -->
     <script type="application/ld+json">
@@ -56,7 +57,7 @@
           "name": "Representaciones Westfalia Separator S.A.C.",
           "alternateName": "Westfalia Separator Perú",
           "url": "https://westfalia.pe/",
-          "logo": "https://westfalia.pe/Logo.jpeg",
+          "logo": "https://westfalia.pe/logo.jpg",
           "sameAs": [
             "https://www.facebook.com/REPWestfaliaPeru"
           ],
@@ -72,7 +73,7 @@
           "@type": "LocalBusiness",
           "@id": "https://westfalia.pe/#main-office",
           "name": "Representaciones Westfalia Separator S.A.C. - Oficina Principal",
-          "image": "https://westfalia.pe/Logo.jpeg",
+          "image": "https://westfalia.pe/logo.jpg",
           "telephone": "+51-1-446-8971",
           "url": "https://westfalia.pe/",
           "address": {
@@ -105,7 +106,7 @@
           "@type": "LocalBusiness",
           "@id": "https://westfalia.pe/#technical-workshop",
           "name": "Representaciones Westfalia Separator S.A.C. - Taller Técnico",
-          "image": "https://westfalia.pe/Logo.jpeg",
+          "image": "https://westfalia.pe/logo.jpg",
           "telephone": "+51-1-446-8971",
           "url": "https://westfalia.pe/",
           "address": {
@@ -128,6 +129,7 @@
 
     <!-- Recursos de Estilos y Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap"
         rel="stylesheet">
@@ -139,7 +141,7 @@
     <!-- NAV -->
     <nav id="navbar">
         <a href="#inicio" class="nav-logo">
-            <img src="./Logo.jpeg" alt="Westfalia Perú Logo">
+            <img src="./logo.jpg" alt="Westfalia Perú Logo">
             <div class="nav-brand">
                 <span class="nav-brand-name">Representaciones Westfalia Separator</span>
                 <!--  <span class="nav-brand-sub">Centrífugas & Decantadoras</span> -->
@@ -150,10 +152,12 @@
             <li><a href="#servicios">Servicios</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
             <li><a href="#historia">Historia</a></li>
-            <li><a href="https://wa.me/51998376333" class="nav-cta" target="_blank"><i class="fab fa-whatsapp"></i>
+            <li><a href="https://wa.me/51998376333" class="nav-cta" target="_blank" rel="noopener noreferrer"><i
+                        class="fab fa-whatsapp"></i>
                     Contactar</a></li>
         </ul>
-        <div class="hamburger" id="hamburger">
+        <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Abrir menú de navegación"
+            aria-expanded="false" aria-controls="navLinks">
             <span></span><span></span><span></span>
         </div>
     </nav>
@@ -225,8 +229,7 @@
                 tratamiento de fluidos industriales.</p>
         </div>
         <div class="products-grid">
-            <div class="product-card reveal" onclick="window.open('centrifugas.html', '_blank')"
-                style="cursor:pointer;">
+            <a href="centrifugas.html" target="_blank" rel="noopener noreferrer" class="product-card reveal">
                 <div class="product-icon"><i class="fas fa-sync-alt"></i></div>
                 <div class="product-name">Separadoras – Centrífugas</div>
                 <p class="product-desc">Separación de alto rendimiento para líquidos y sólidos en procesos industriales
@@ -234,10 +237,9 @@
                 <span
                     style="display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:700;margin-top:.8rem;opacity:.7;">Ver
                     equipos <i class="fas fa-arrow-right"></i></span>
-            </div>
+            </a>
 
-            <div class="product-card reveal" onclick="window.open('decantadoras.html', '_blank')"
-                style="cursor:pointer;">
+            <a href="decantadoras.html" target="_blank" rel="noopener noreferrer" class="product-card reveal">
                 <div class="product-icon"><i class="fas fa-filter"></i></div>
                 <div class="product-name">Decantadoras</div>
                 <p class="product-desc">Tecnología de decantación de tres fases para máxima eficiencia en extracción y
@@ -245,9 +247,9 @@
                 <span
                     style="display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:700;margin-top:.8rem;opacity:.7;">Ver
                     equipos <i class="fas fa-arrow-right"></i></span>
-            </div>
+            </a>
 
-            <div class="product-card reveal" onclick="window.open('pulidoras.html', '_blank')" style="cursor:pointer;">
+            <a href="pulidoras.html" target="_blank" rel="noopener noreferrer" class="product-card reveal">
                 <div class="product-icon"><i class="fas fa-gem"></i></div>
                 <div class="product-name">Pulidoras</div>
                 <p class="product-desc">Equipos especializados para el pulido y refinación de aceites, jugos y productos
@@ -255,9 +257,8 @@
                 <span
                     style="display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:700;margin-top:.8rem;opacity:.7;">Ver
                     equipos <i class="fas fa-arrow-right"></i></span>
-            </div>
-            <div class="product-card reveal" onclick="window.open('intercambiadores.html', '_blank')"
-                style="cursor:pointer;">
+            </a>
+            <a href="intercambiadores.html" target="_blank" rel="noopener noreferrer" class="product-card reveal">
                 <div class="product-icon"><i class="fas fa-thermometer-half"></i></div>
                 <div class="product-name">Intercambiadores de Calor</div>
                 <p class="product-desc">Sistemas de intercambio térmico de alta eficiencia energética para optimizar
@@ -265,7 +266,7 @@
                 <span
                     style="display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:700;margin-top:.8rem;opacity:.7;">Ver
                     equipos <i class="fas fa-arrow-right"></i></span>
-            </div>
+            </a>
         </div>
     </section>
 
@@ -319,7 +320,8 @@
                     <div class="sector-pill"><i class="fas fa-mountain"></i> Industria Minera</div>
                 </div>
                 <div style="margin-top: 2rem;">
-                    <a href="servicios.html" target="_blank" class="btn-hero-primary"><i class="fas fa-info-circle"></i>
+                    <a href="servicios.html" target="_blank" rel="noopener noreferrer" class="btn-hero-primary"><i
+                            class="fas fa-info-circle"></i>
                         Más información</a>
                 </div>
             </div>
@@ -494,10 +496,10 @@
                 </div>
                 <div class="about-img">
                     <img src="soho.jpg" alt="Edificio SOHO - Representaciones Westfalia Separator"
-                        onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0f5233,#072a6b)';this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.innerHTML='<i class=fas fa-building style=color:rgba(255,255,255,.15);font-size:6rem></i>'"
-                        </div>
+                        onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0f5233,#072a6b)';this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.innerHTML='<i class=fas fa-building style=color:rgba(255,255,255,.15);font-size:6rem></i>'">
                 </div>
             </div>
+        </div>
     </section>
 
     <!-- GEA PARTNER -->
@@ -618,7 +620,7 @@
                     <div class="ci-icon"><i class="fas fa-map"></i></div>
                     <div class="ci-text">
                         <strong>Ubicación</strong>
-                        <a href="https://maps.app.goo.gl/95iVneytemXYbtku7" target="_blank"
+                        <a href="https://maps.app.goo.gl/95iVneytemXYbtku7" target="_blank" rel="noopener noreferrer"
                             style="color:var(--green);text-decoration:none">Ver en Google Maps →</a>
                     </div>
                 </div>
@@ -629,27 +631,28 @@
                 <form id="contactForm" onsubmit="handleForm(event)">
                     <div class="form-row">
                         <div class="form-group">
-                            <label>Nombre</label>
-                            <input type="text" placeholder="Su nombre" required>
+                            <label for="fld-nombre">Nombre</label>
+                            <input type="text" id="fld-nombre" name="nombre" placeholder="Su nombre" required>
                         </div>
                         <div class="form-group">
-                            <label>Empresa</label>
-                            <input type="text" placeholder="Nombre de empresa" required>
+                            <label for="fld-empresa">Empresa</label>
+                            <input type="text" id="fld-empresa" name="empresa" placeholder="Nombre de empresa"
+                                required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" placeholder="correo@empresa.com" required>
+                            <label for="fld-email">Email</label>
+                            <input type="email" id="fld-email" name="email" placeholder="correo@empresa.com" required>
                         </div>
                         <div class="form-group">
-                            <label>Teléfono / Celular</label>
-                            <input type="tel" placeholder="+51 999 000 000">
+                            <label for="fld-telefono">Teléfono / Celular</label>
+                            <input type="tel" id="fld-telefono" name="telefono" placeholder="+51 999 000 000">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Industria</label>
-                        <select>
+                        <label for="fld-industria">Industria</label>
+                        <select id="fld-industria" name="industria">
                             <option value="">Seleccione su industria</option>
                             <option>Industria Pesquera</option>
                             <option>Industria Láctea</option>
@@ -661,8 +664,9 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Mensaje</label>
-                        <textarea placeholder="Describa su necesidad o consulta..."></textarea>
+                        <label for="fld-mensaje">Mensaje</label>
+                        <textarea id="fld-mensaje" name="mensaje"
+                            placeholder="Describa su necesidad o consulta..."></textarea>
                     </div>
                     <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Enviar Consulta</button>
                 </form>
@@ -674,7 +678,7 @@
     <footer>
         <div class="footer-main">
             <div class="footer-brand">
-                <img src="./Logo.jpeg" alt="Representaciones Westfalia Separator">
+                <img src="./logo.jpg" alt="Representaciones Westfalia Separator">
                 <p>Representantes oficiales de tecnología GEA Westfalia Separator en Perú y Sudamérica. Soluciones
                     industriales
                     de alta eficiencia desde 1999.</p>
@@ -712,7 +716,8 @@
                     <li><a href="tel:+5114468971">(01) 446-8971</a></li>
                     <li><a href="https://wa.me/51998376333">998 376 333</a></li>
                     <li><a href="mailto:info@westfalia.pe">info@westfalia.pe</a></li>
-                    <li><a href="https://maps.app.goo.gl/95iVneytemXYbtku7" target="_blank">Magdalena, Lima</a></li>
+                    <li><a href="https://maps.app.goo.gl/95iVneytemXYbtku7" target="_blank"
+                            rel="noopener noreferrer">Magdalena, Lima</a></li>
                 </ul>
             </div>
         </div>
@@ -723,7 +728,8 @@
     </footer>
 
     <!-- WHATSAPP FLOAT -->
-    <a href="https://wa.me/51998376333" class="wa-float" target="_blank" title="Chatea con nosotros">
+    <a href="https://wa.me/51998376333" class="wa-float" target="_blank" rel="noopener noreferrer"
+        title="Chatea con nosotros" aria-label="Chatea con nosotros por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -737,11 +743,22 @@
         // Hamburger
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
+        function toggleNav() {
+            const isOpen = navLinks.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', isOpen);
+        }
+        hamburger.addEventListener('click', toggleNav);
+        hamburger.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleNav();
+            }
         });
         document.querySelectorAll('.nav-links a').forEach(a => {
-            a.addEventListener('click', () => navLinks.classList.remove('open'));
+            a.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
         });
 
         // Hero Slider
