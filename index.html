@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es-PE">
+<html lang="es-PE" xml:lang="es">
 
 <head>
     <!-- Google Tag Manager -->
@@ -10,12 +10,9 @@
         })(window, document, 'script', 'dataLayer', 'GTM-NFPWQFRT');</script>
     <!-- End Google Tag Manager -->
 
-    <!-- Favicons -->
-    <link rel="icon" href="logo.jpg" type="image/jpeg">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <!-- Favicons (solo archivos que existen en el servidor) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Metadatos Técnicos Básicos -->
     <meta charset="UTF-8">
@@ -25,11 +22,12 @@
     <title>Representaciones Westfalia Separator S.A.C. | Centrífugas y Decantadoras en Perú</title>
     <meta name="description"
         content="Socio estratégico de GEA Westfalia Separator en Perú y Sudamérica. Ofrecemos centrífugas industriales, decantadoras, pulidoras, intercambiadores de calor, repuestos originales y soporte técnico especializado.">
-    <meta name="keywords"
-        content="Westfalia Separator, GEA Westfalia, centrifugas industriales, decantadoras, pulidoras, intercambiadores de calor, repuestos originales GEA, soporte tecnico industrial peru, separadoras centrifugas, Magdalena, Puente Piedra, Lima, Peru">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Representaciones Westfalia Separator S.A.C.">
+    <meta name="theme-color" content="#007A73">
     <link rel="canonical" href="https://gea-westfalia.com.pe/">
-    <link rel="sitemap" type="application/xml" href="https://gea-westfalia.com.pe/sitemap.xml">
+    <link rel="alternate" hreflang="es-PE" href="https://gea-westfalia.com.pe/">
+    <link rel="alternate" hreflang="es" href="https://gea-westfalia.com.pe/">
 
     <!-- GEO Targeting / Local SEO -->
     <meta name="geo.region" content="PE-LMA" />
@@ -44,6 +42,9 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gea-westfalia.com.pe/" />
     <meta property="og:image" content="https://gea-westfalia.com.pe/logo.jpg" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:image:alt" content="Logo Representaciones Westfalia Separator S.A.C." />
     <meta property="og:site_name" content="Westfalia Perú" />
     <meta property="og:locale" content="es_PE" />
 
@@ -60,12 +61,36 @@
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "WebSite",
+          "@id": "https://gea-westfalia.com.pe/#website",
+          "url": "https://gea-westfalia.com.pe/",
+          "name": "Representaciones Westfalia Separator S.A.C.",
+          "description": "Socio estratégico de GEA Westfalia Separator en Perú y Sudamérica.",
+          "inLanguage": "es-PE",
+          "publisher": { "@id": "https://gea-westfalia.com.pe/#organization" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://gea-westfalia.com.pe/#webpage",
+          "url": "https://gea-westfalia.com.pe/",
+          "name": "Representaciones Westfalia Separator S.A.C. | Centrífugas y Decantadoras en Perú",
+          "description": "Socio estratégico de GEA Westfalia Separator en Perú y Sudamérica. Centrífugas industriales, decantadoras, pulidoras, intercambiadores de calor, repuestos originales y soporte técnico especializado.",
+          "inLanguage": "es-PE",
+          "isPartOf": { "@id": "https://gea-westfalia.com.pe/#website" },
+          "about": { "@id": "https://gea-westfalia.com.pe/#organization" }
+        },
+        {
           "@type": "Organization",
           "@id": "https://gea-westfalia.com.pe/#organization",
           "name": "Representaciones Westfalia Separator S.A.C.",
           "alternateName": "Westfalia Separator Perú",
           "url": "https://gea-westfalia.com.pe/",
-          "logo": "https://gea-westfalia.com.pe/logo.jpg",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://gea-westfalia.com.pe/logo.jpg",
+            "width": 800,
+            "height": 600
+          },
           "sameAs": [
             "https://www.facebook.com/REPWestfaliaPeru"
           ],
@@ -84,6 +109,9 @@
           "image": "https://gea-westfalia.com.pe/logo.jpg",
           "telephone": "+51-1-446-8971",
           "url": "https://gea-westfalia.com.pe/",
+          "priceRange": "$$",
+          "currenciesAccepted": "PEN, USD",
+          "paymentAccepted": "Cash, Credit Card, Bank Transfer",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Jr. Tomas Ramsey 930 Of. 507, Edificio SOHO",
@@ -100,15 +128,12 @@
           "openingHoursSpecification": {
             "@type": "OpeningHoursSpecification",
             "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday"
+              "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
             ],
             "opens": "08:00",
             "closes": "18:00"
-          }
+          },
+          "hasMap": "https://maps.google.com/?q=-12.0945,-77.0620"
         },
         {
           "@type": "LocalBusiness",
@@ -135,13 +160,23 @@
     }
     </script>
 
+    <!-- Preload recursos críticos (mejora LCP / Core Web Vitals) -->
+    <!-- WebP para navegadores modernos (Chrome, Edge, Firefox) -->
+    <link rel="preload" href="./Westfalia1.webp" as="image" type="image/webp" fetchpriority="high">
+    <!-- JPEG fallback para navegadores sin soporte WebP (Safari antiguo, IE) -->
+    <link rel="preload" href="./Westfalia1.jpeg" as="image" type="image/jpeg" fetchpriority="low">
+
     <!-- Recursos de Estilos y Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </noscript>
     <link rel="stylesheet" href="./estilos.css">
 </head>
 
@@ -154,10 +189,10 @@
     <!-- NAV -->
     <nav id="navbar">
         <a href="#inicio" class="nav-logo">
-            <img src="./logo.jpg" alt="Westfalia Perú Logo">
+            <img src="./logo.jpg" alt="Representaciones Westfalia Separator S.A.C. — Logo oficial" width="42"
+                height="42" loading="eager">
             <div class="nav-brand">
                 <span class="nav-brand-name">Representaciones Westfalia Separator</span>
-                <!--  <span class="nav-brand-sub">Centrífugas & Decantadoras</span> -->
             </div>
         </a>
         <ul class="nav-links" id="navLinks">
@@ -200,31 +235,35 @@
         <div class="scroll-hint"><i class="fas fa-chevron-down"></i> Scroll</div>
     </section>
 
-    <!-- Mover esto fuera de <style> y después de la sección .hero -->
+    <!-- INFO BAR -->
     <section class="info-bar">
         <div class="info-item">
-            <img src="icono1.png" alt="Tecnología Alemana" class="info-icon">
+            <img src="icono1.png" alt="Tecnología Alemana de GEA Westfalia Separator" class="info-icon" width="64"
+                height="64" loading="lazy">
             <div class="info-text">
                 <span class="info-title">TECNOLOGÍA ALEMANA</span>
                 <span class="info-desc">Equipos de alta tecnología con estándar mundial.</span>
             </div>
         </div>
         <div class="info-item">
-            <img src="icono2.png" alt="Soluciones Integrales" class="info-icon">
+            <img src="icono2.png" alt="Soluciones Integrales de Separación Industrial" class="info-icon" width="64"
+                height="64" loading="lazy">
             <div class="info-text">
                 <span class="info-title">SOLUCIONES INTEGRALES</span>
                 <span class="info-desc">Equipos y servicios para cada etapa de su proceso.</span>
             </div>
         </div>
         <div class="info-item">
-            <img src="icono3.png" alt="Soporte Especializado" class="info-icon">
+            <img src="icono3.png" alt="Soporte Técnico Especializado GEA Westfalia Perú" class="info-icon" width="64"
+                height="64" loading="lazy">
             <div class="info-text">
                 <span class="info-title">SOPORTE ESPECIALIZADO</span>
                 <span class="info-desc">Asistencia técnica y repuestos originales.</span>
             </div>
         </div>
         <div class="info-item">
-            <img src="icono4.png" alt="Experiencia Regional" class="info-icon">
+            <img src="icono4.png" alt="27 años de experiencia industrial en Perú y Latinoamérica" class="info-icon"
+                width="64" height="64" loading="lazy">
             <div class="info-text">
                 <span class="info-title">EXPERIENCIA REGIONAL</span>
                 <span class="info-desc">Más de 27 años brindando soluciones en Perú y Latinoamérica.</span>
@@ -242,7 +281,8 @@
                 tratamiento de fluidos industriales.</p>
         </div>
         <div class="products-grid">
-            <a href="centrifugas.html" target="_blank" rel="noopener noreferrer" class="product-card reveal">
+            <!-- Links internos SIN target="_blank" para correcta indexación por Googlebot -->
+            <a href="centrifugas.html" class="product-card reveal">
                 <div class="product-icon"><i class="fas fa-sync-alt"></i></div>
                 <div class="product-name">Separadoras – Centrífugas</div>
                 <p class="product-desc">Separación de alto rendimiento para líquidos y sólidos en procesos industriales
@@ -252,7 +292,7 @@
                     equipos <i class="fas fa-arrow-right"></i></span>
             </a>
 
-            <a href="decantadoras.html" target="_blank" rel="noopener noreferrer" class="product-card reveal">
+            <a href="decantadoras.html" class="product-card reveal">
                 <div class="product-icon"><i class="fas fa-filter"></i></div>
                 <div class="product-name">Decantadoras</div>
                 <p class="product-desc">Tecnología de decantación de tres fases para máxima eficiencia en extracción y
@@ -262,7 +302,7 @@
                     equipos <i class="fas fa-arrow-right"></i></span>
             </a>
 
-            <a href="pulidoras.html" target="_blank" rel="noopener noreferrer" class="product-card reveal">
+            <a href="pulidoras.html" class="product-card reveal">
                 <div class="product-icon"><i class="fas fa-gem"></i></div>
                 <div class="product-name">Pulidoras</div>
                 <p class="product-desc">Equipos especializados para el pulido y refinación de aceites, jugos y productos
@@ -271,7 +311,8 @@
                     style="display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:700;margin-top:.8rem;opacity:.7;">Ver
                     equipos <i class="fas fa-arrow-right"></i></span>
             </a>
-            <a href="intercambiadores.html" target="_blank" rel="noopener noreferrer" class="product-card reveal">
+
+            <a href="intercambiadores.html" class="product-card reveal">
                 <div class="product-icon"><i class="fas fa-thermometer-half"></i></div>
                 <div class="product-name">Intercambiadores de Calor</div>
                 <p class="product-desc">Sistemas de intercambio térmico de alta eficiencia energética para optimizar
@@ -308,7 +349,8 @@
         <div class="services-layout">
             <div class="services-visual reveal">
                 <div class="services-img">
-                    <img src="./tecnicos3.jpg" alt="Planta Industrial">
+                    <img src="./tecnicos3.jpg" alt="Técnicos especializados GEA Westfalia Separator Perú"
+                        loading="lazy">
                 </div>
                 <div class="accent-box">
                     <div class="big">GEA GROUP</div>
@@ -316,7 +358,7 @@
                 </div>
             </div>
             <div class="reveal">
-                <span class="section-tag">Servicios & Sectores</span>
+                <span class="section-tag">Servicios &amp; Sectores</span>
                 <h2 class="section-title">Soluciones para cada<br>industria</h2>
                 <div class="divider"></div>
                 <p class="section-sub">Brindamos soporte técnico especializado, repuestos originales y mantenimiento
@@ -327,14 +369,13 @@
                     <div class="sector-pill"><i class="fas fa-industry"></i> Industria Azucarera</div>
                     <div class="sector-pill"><i class="fas fa-ship"></i> Industria Marítima</div>
                     <div class="sector-pill"><i class="fas fa-flask"></i> Industria Química</div>
-                    <div class="sector-pill"><i class="fas fa-utensils"></i> Alimentos & Bebidas</div>
+                    <div class="sector-pill"><i class="fas fa-utensils"></i> Alimentos &amp; Bebidas</div>
                     <div class="sector-pill"><i class="fas fa-snowflake"></i> Refrigeración Industrial</div>
                     <div class="sector-pill"><i class="fas fa-bolt"></i> Plantas y Energía</div>
                     <div class="sector-pill"><i class="fas fa-mountain"></i> Industria Minera</div>
                 </div>
                 <div style="margin-top: 2rem;">
-                    <a href="servicios.html" target="_blank" rel="noopener noreferrer" class="btn-hero-primary"><i
-                            class="fas fa-info-circle"></i>
+                    <a href="#contacto" class="btn-hero-primary"><i class="fas fa-info-circle"></i>
                         Más información</a>
                 </div>
             </div>
@@ -469,6 +510,7 @@
             </div>
         </div>
     </section>
+
     <!-- ABOUT -->
     <section class="about-section" id="nosotros">
         <div class="about-layout">
@@ -508,7 +550,8 @@
                     Fundación<br>en Perú
                 </div>
                 <div class="about-img">
-                    <img src="soho.jpg" alt="Edificio SOHO - Representaciones Westfalia Separator"
+                    <img src="soho.jpg" alt="Edificio SOHO - Sede de Representaciones Westfalia Separator en Lima"
+                        loading="lazy"
                         onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0f5233,#072a6b)';this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.innerHTML='<i class=fas fa-building style=color:rgba(255,255,255,.15);font-size:6rem></i>'">
                 </div>
             </div>
@@ -649,8 +692,7 @@
                         </div>
                         <div class="form-group">
                             <label for="fld-empresa">Empresa</label>
-                            <input type="text" id="fld-empresa" name="empresa" placeholder="Nombre de empresa"
-                                required>
+                            <input type="text" id="fld-empresa" name="empresa" placeholder="Nombre de empresa" required>
                         </div>
                     </div>
                     <div class="form-row">
@@ -672,7 +714,7 @@
                             <option>Industria Azucarera</option>
                             <option>Industria Minera</option>
                             <option>Industria Química</option>
-                            <option>Alimentos & Bebidas</option>
+                            <option>Alimentos &amp; Bebidas</option>
                             <option>Otra</option>
                         </select>
                     </div>
@@ -691,7 +733,7 @@
     <footer>
         <div class="footer-main">
             <div class="footer-brand">
-                <img src="./logo.jpg" alt="Representaciones Westfalia Separator">
+                <img src="./logo.jpg" alt="Representaciones Westfalia Separator S.A.C." loading="lazy">
                 <p>Representantes oficiales de tecnología GEA Westfalia Separator en Perú y Sudamérica. Soluciones
                     industriales
                     de alta eficiencia desde 1999.</p>
@@ -716,7 +758,6 @@
             <div class="footer-col">
                 <h5>Productos</h5>
                 <ul>
-
                     <li><a href="centrifugas.html">Separadoras</a></li>
                     <li><a href="decantadoras.html">Decantadoras</a></li>
                     <li><a href="pulidoras.html">Pulidoras</a></li>

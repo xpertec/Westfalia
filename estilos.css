@@ -214,15 +214,21 @@
         }
 
         .slide-1 {
-            background-image: url('./Westfalia1.jpeg')
+            background-image: url('./Westfalia1.webp');
+            background-image: -webkit-image-set(url('./Westfalia1.webp') 1x);
+            background-image: image-set(url('./Westfalia1.webp') type('image/webp'), url('./Westfalia1.jpeg') type('image/jpeg'));
         }
 
         .slide-2 {
-            background-image: url('./Westfalia2.jpeg')
+            background-image: url('./Westfalia2.webp');
+            background-image: -webkit-image-set(url('./Westfalia2.webp') 1x);
+            background-image: image-set(url('./Westfalia2.webp') type('image/webp'), url('./Westfalia2.jpeg') type('image/jpeg'));
         }
 
         .slide-3 {
-            background-image: url('./Westfalia3.png')
+            background-image: url('./Westfalia3.webp');
+            background-image: -webkit-image-set(url('./Westfalia3.webp') 1x);
+            background-image: image-set(url('./Westfalia3.webp') type('image/webp'), url('./Westfalia3.png') type('image/png'));
         }
 
         .hero-content {

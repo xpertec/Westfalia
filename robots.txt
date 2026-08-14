@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
+Disallow: /indexbak.html
+Disallow: /google07b3f178bbb02be9.html
+Disallow: /westfalia.zip
+Disallow: /redirect.htaccess
+Disallow: /*.bak$
 
+# Crawl-delay to prevent overload (optional, respected by Bing/Yandex)
+# Crawl-delay: 2
+
+# Google AdsBot
+User-agent: AdsBot-Google
+Allow: /
+
+# Sitemap
 Sitemap: https://gea-westfalia.com.pe/sitemap.xml
